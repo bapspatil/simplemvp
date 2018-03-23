@@ -6,12 +6,13 @@ import dagger.Module;
 import dagger.Provides;
 import io.caster.simplemvp.presentation.UserPresenter;
 import io.caster.simplemvp.presentation.UserPresenterImpl;
-import io.caster.simplemvp.repository.UserRepository;
 import io.caster.simplemvp.repository.InMemoryUserRepositoryImpl;
+import io.caster.simplemvp.repository.UserRepository;
 
 @Module
 public class AppModule {
-    @Provides @Singleton
+    @Provides
+    @Singleton
     public UserRepository provideUserRepository() {
         return new InMemoryUserRepositoryImpl();
     }

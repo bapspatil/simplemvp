@@ -32,7 +32,7 @@ public class InMemoryUserRepositoryImpl implements UserRepository {
      */
     @Override
     public void save(User u) {
-        if(this.u == null) {
+        if (this.u == null) {
             this.u = getUser(0); // create the in memory user.
         }
         this.u.setId(u.getId());

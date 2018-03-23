@@ -6,7 +6,6 @@ public class MvpApplication extends Application {
 
     private AppComponent component;
 
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -16,6 +15,6 @@ public class MvpApplication extends Application {
     }
 
     public AppComponent getComponent() {
-        return  component;
+        return component;
     }
 }

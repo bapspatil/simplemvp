@@ -1,21 +1,16 @@
 package io.caster.simplemvp.view.fragment;
 
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.caster.simplemvp.MvpApplication;
 import io.caster.simplemvp.R;
 import io.caster.simplemvp.presentation.UserPresenter;
@@ -26,12 +21,10 @@ import io.caster.simplemvp.view.UserView;
  */
 public class UserFragment extends Fragment implements UserView {
 
-    @Inject UserPresenter userPresenter;
-
+    private static final String USER_ID = "user_id";
     protected EditText userFirstName;
     protected EditText userLastName;
-
-    private static final String USER_ID = "user_id";
+    @Inject UserPresenter userPresenter;
 
     public UserFragment() {
     }
@@ -39,7 +32,7 @@ public class UserFragment extends Fragment implements UserView {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((MvpApplication)getActivity().getApplication()).getComponent().inject(this);
+        ((MvpApplication) getActivity().getApplication()).getComponent().inject(this);
     }
 
     @Override
