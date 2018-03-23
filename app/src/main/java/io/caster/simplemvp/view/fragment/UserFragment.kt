@@ -5,12 +5,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import io.caster.simplemvp.MvpApplication
 import io.caster.simplemvp.R
 import io.caster.simplemvp.presentation.UserPresenter
 import io.caster.simplemvp.view.UserView
 import kotlinx.android.synthetic.main.fragment_main.*
+import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
 /**
@@ -54,15 +54,15 @@ class UserFragment : Fragment(), UserView {
     }
 
     override fun showUserNotFoundMessage() {
-        Toast.makeText(activity, R.string.user_not_found, Toast.LENGTH_LONG).show()
+        toast(R.string.user_not_found)
     }
 
     override fun showUserSavedMessage() {
-        Toast.makeText(activity, R.string.user_saved, Toast.LENGTH_SHORT).show()
+        toast(R.string.user_saved)
     }
 
     override fun showUserNameIsRequired() {
-        Toast.makeText(activity, R.string.user_name_required_message, Toast.LENGTH_SHORT).show()
+        toast(R.string.user_name_required_message)
     }
 
     companion object {
